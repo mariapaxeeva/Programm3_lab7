@@ -366,8 +366,26 @@ void Bank::OutBorromers()
 	}
 }
 
-void Bank::SortedBorrowersByAlpha()
+// Алгоритм сортировки по имени или названию организации по алфавиту
+void Bank::SortedBorrowersByName()
 {
-	std::sort(borrowers.begin(), borrowers.end(), [](Borrower* b1, Borrower* b2)
+	sort(borrowers.begin(), borrowers.end(), [](Borrower* b1, Borrower* b2)
 		{return b1->GetName() <= b2->GetName(); });
+}
+
+// Алгоритм поиска по имени или названию организации
+int Bank::FindName(string searched)
+{
+	auto it = find_if(borrowers.begin(), borrowers.end(), [searched](Borrower* b) 
+		{return b->GetName() == searched; });
+	if (it != borrowers.end()) {
+		cout << "Значение " << searched << " найдено" << endl;
+		Borrower* b = *it;
+		b->OutBorrower();
+		cout << endl;
+	}
+	else {
+		cout << "Значение " << searched << " не найдено" << endl;
+	}
+	return 0;
 }

@@ -112,8 +112,15 @@ int main()
     bank.AddBorrower(borrowers[2]);
     bank.AddBorrower(urFace1[2]);
     bank.OutBorromers();
-    bank.SortedBorrowersByAlpha();
+
+    cout << "\n" << ++test << ") Алгоритм сортировки по имени или названию организации" << endl;
+    bank.SortedBorrowersByName();
     bank.OutBorromers();
+
+    cout << "\n" << ++test << ") Алгоритм поиска по имени или названию организации" << endl;
+    bank.FindName("Сидоров");
+    bank.FindName("Должник");
+    bank.FindName("Бульвар");
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
