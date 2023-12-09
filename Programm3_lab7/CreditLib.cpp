@@ -344,3 +344,13 @@ LegalPerson& LegalPerson::operator=(const Borrower& other)
 	return *this;
 }
 
+void Bank::OutBorromers()
+{
+	cout << "База данных заёмщиков" << endl;
+	int size = this->borrowers.size();
+	for (int i = 0; i < size; i++) {
+		borrowers[i]->OutBorrower();
+		cout << endl;
+	}
+	cout << endl;
+}

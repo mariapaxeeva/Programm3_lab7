@@ -2,6 +2,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <string>
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -396,6 +397,30 @@ public:
 
 	void SetOGRN(int ogrnNew) {
 		ogrn = ogrnNew;
+	}
+};
+
+// хранит данные о всех заёмщиках
+class Bank
+{
+private:
+	vector <Borrower*> borrowers;
+public:
+	Bank() {};
+	int AddBorrower(Borrower* b)
+	{
+		this->borrowers.push_back(b);
+		return 0;
+	}
+	int AddBorrower(LegalPerson* lp)
+	{
+		this->borrowers.push_back(lp);
+		return 0;
+	}
+	void OutBorromers();
+	vector <Borrower*> getBorrowers()
+	{
+		return borrowers;
 	}
 };
 

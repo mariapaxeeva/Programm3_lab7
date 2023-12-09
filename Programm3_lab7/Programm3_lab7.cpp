@@ -24,50 +24,50 @@ int main()
     cout << "\n" << ++test << ") Тест конструктора без параметров" << endl;
     credit0.OutData();
 
-    Credit creditTest(123, "банк", "Сбербанк", "Иванов И. И.", 30, 20000, 0, 1000, '-', "Петров П. П.", 45000, 100000, 4.8, 10, "рубль");
-    cout << "\n" << ++test << ") Тест конструктора со всеми параметрами" << endl;
-    creditTest.OutData();
+    //Credit creditTest(123, "банк", "Сбербанк", "Иванов И. И.", 30, 20000, 0, 1000, '-', "Петров П. П.", 45000, 100000, 4.8, 10, "рубль");
+    //cout << "\n" << ++test << ") Тест конструктора со всеми параметрами" << endl;
+    //creditTest.OutData();
 
-    cout << "\n" << ++test << ") Тест метода для проверки одобрения кредита" << endl;
-    creditTest.Approve();
+    //cout << "\n" << ++test << ") Тест метода для проверки одобрения кредита" << endl;
+    //creditTest.Approve();
 
-    cout << "\n" << ++test << ") Тест метода для расчета суммы, которую требуется выплатить по процентной ставке" << endl;
-    creditTest.PercentCalculate();
+    //cout << "\n" << ++test << ") Тест метода для расчета суммы, которую требуется выплатить по процентной ставке" << endl;
+    //creditTest.PercentCalculate();
 
-    cout << "\n" << ++test << ") Тест метода для расчета месячной выплаты" << endl;
-    cout << "Выплата составляет " << creditTest.CalculateMonthPayment() << endl;
+    //cout << "\n" << ++test << ") Тест метода для расчета месячной выплаты" << endl;
+    //cout << "Выплата составляет " << creditTest.CalculateMonthPayment() << endl;
 
-    cout << "\n" << ++test << ") Тест метода для расчета суммы, которую требуется выплатить по процентной ставке при досрочном погашении" << endl;
-    creditTest.EarlyRepaymentPercentCalculate();
+    //cout << "\n" << ++test << ") Тест метода для расчета суммы, которую требуется выплатить по процентной ставке при досрочном погашении" << endl;
+    //creditTest.EarlyRepaymentPercentCalculate();
 
-    Borrower borrowerTest;
-    cout << "\n" << ++test << ") Тест метода для оценки вероятности одобрения кредита" << endl;
-    borrowerTest.CheckProbabilityApproval();
+    //Borrower borrowerTest;
+    //cout << "\n" << ++test << ") Тест метода для оценки вероятности одобрения кредита" << endl;
+    //borrowerTest.CheckProbabilityApproval();
 
-    cout << "\n" << ++test << ") Тест метода для ввода с консоли и вывода в консоль вероятности одобрения кредита" << endl;
-    creditTest = creditTest.InputData();
-    creditTest.OutData();
+    //cout << "\n" << ++test << ") Тест метода для ввода с консоли и вывода в консоль вероятности одобрения кредита" << endl;
+    //creditTest = creditTest.InputData();
+    //creditTest.OutData();
 
-    cout << "\n" << ++test << ")  Одномерный динамический массив объектов класса " << endl;
-    Credit* data = new Credit[3]{ int(123), int(111), int(1000) };
-    for (int i = 0; i < 3; i++)
-        cout << data[i].GetNumber() << endl;
+    //cout << "\n" << ++test << ")  Одномерный динамический массив объектов класса " << endl;
+    //Credit* data = new Credit[3]{ int(123), int(111), int(1000) };
+    //for (int i = 0; i < 3; i++)
+    //    cout << data[i].GetNumber() << endl;
 
-    delete[] data;
+    //delete[] data;
 
-    cout << "\n" << ++test << ") Одномерный массив динамических объектов класса " << endl;
-    Credit* dinamicData[3]{ new Credit(207), new Credit(1890), new Credit(43) };
-    for (int i = 0; i < 3; i++)
-        cout << dinamicData[i]->GetNumber() << endl;
+    //cout << "\n" << ++test << ") Одномерный массив динамических объектов класса " << endl;
+    //Credit* dinamicData[3]{ new Credit(207), new Credit(1890), new Credit(43) };
+    //for (int i = 0; i < 3; i++)
+    //    cout << dinamicData[i]->GetNumber() << endl;
 
-    for (int i = 0; i < 3; i++)
-        delete dinamicData[i];
+    //for (int i = 0; i < 3; i++)
+    //    delete dinamicData[i];
 
-    cout << "\n" << ++test << ") Двумерный массив объектов класса " << endl;
-    Credit* TwoData[2][2]{ new Credit(207), new Credit(1890), new Credit(43), new Credit(345) };
-    for (int i = 0; i < 2; i++)
-        for (int j = 0; j < 2; j++)
-            cout << TwoData[i][j]->GetNumber() << endl;
+    //cout << "\n" << ++test << ") Двумерный массив объектов класса " << endl;
+    //Credit* TwoData[2][2]{ new Credit(207), new Credit(1890), new Credit(43), new Credit(345) };
+    //for (int i = 0; i < 2; i++)
+    //    for (int j = 0; j < 2; j++)
+    //        cout << TwoData[i][j]->GetNumber() << endl;
 
     cout << "\n" << ++test << ") Производный класс (+ модификатор protected предоставляет доступ производному классу,\n\
    но запрещает использование сторонними функциями) " << endl;
@@ -85,7 +85,7 @@ int main()
     urFace = fizFace;
     urFace.OutBorrower();
 
-    cout << "\n" << ++test << ") Виртуальная функция CheckProbabilityApproval" << endl;
+ /*   cout << "\n" << ++test << ") Виртуальная функция CheckProbabilityApproval" << endl;
     Borrower* borrowerTestVF = new Borrower("БыстроДеньги", 15, 150000, 5, 10000, '-', "Гарант Г. Г.", 1200);
     LegalPerson legalTest;
     legalTest = *borrowerTestVF;
@@ -96,9 +96,17 @@ int main()
     TransferMoney<int> accTransfer(102030400, 123405030, 4500);
     accTransfer.Transfer();
     TransferMoney<string> nameTransfer;
-    nameTransfer.Transfer();
+    nameTransfer.Transfer();*/
 
-
+    cout << "\n" << ++test << ") Vector" << endl;
+    Borrower* borrowers[3] = { new Borrower("БыстроДеньги", 15, 150000, 5, 10000, '-', "Гарант Г. Г.", 1200),
+                               new Borrower("БДеньги", 15, 15, 5, 100, '-', "Гант Г. Г.", 12), 
+                               new Borrower("БыстроД", 15, 1000, 5, 1000, '-', "Гар Г. Г.", 200), };
+    Bank bank;
+    bank.AddBorrower(borrowers[0]);
+    bank.AddBorrower(borrowers[1]);
+    bank.AddBorrower(borrowers[2]);
+    bank.OutBorromers();
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
