@@ -3,6 +3,7 @@
 #include "conio.h"
 #include "string"
 #include <iostream>
+#include <algorithm>
 #define _CRT_SECURE_NO_WARNINGS
 
 using namespace std;
@@ -346,11 +347,27 @@ LegalPerson& LegalPerson::operator=(const Borrower& other)
 
 void Bank::OutBorromers()
 {
-	cout << "База данных заёмщиков" << endl;
-	int size = this->borrowers.size();
-	for (int i = 0; i < size; i++) {
-		borrowers[i]->OutBorrower();
-		cout << endl;
+	cout << "База данных заёмщиков" << endl << endl;
+
+	for (auto it = borrowers.begin(); it != borrowers.end(); ++it)
+	{
+		LegalPerson* lp = dynamic_cast<LegalPerson*>(*it);
+		if (lp)
+		{
+			lp->OutBorrower();
+			cout << endl;
+		}
+		else
+		{
+			Borrower* b = *it;
+			b->OutBorrower();
+			cout << endl;
+		}
 	}
-	cout << endl;
+}
+
+void Bank::SortedBorrowersByAlpha()
+{
+	std::sort(borrowers.begin(), borrowers.end(), [](Borrower* b1, Borrower* b2)
+		{return b1->GetName() <= b2->GetName(); });
 }

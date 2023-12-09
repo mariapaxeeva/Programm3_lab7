@@ -422,6 +422,7 @@ public:
 	{
 		return borrowers;
 	}
+	void SortedBorrowersByAlpha();
 };
 
 // Шаблон класса для перевода денег по реквизитам (номеру телефона, ФИО или номеру счета)

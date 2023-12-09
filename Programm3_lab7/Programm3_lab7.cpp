@@ -99,13 +99,20 @@ int main()
     nameTransfer.Transfer();*/
 
     cout << "\n" << ++test << ") Vector" << endl;
-    Borrower* borrowers[3] = { new Borrower("БыстроДеньги", 15, 150000, 5, 10000, '-', "Гарант Г. Г.", 1200),
-                               new Borrower("БДеньги", 15, 15, 5, 100, '-', "Гант Г. Г.", 12), 
-                               new Borrower("БыстроД", 15, 1000, 5, 1000, '-', "Гар Г. Г.", 200), };
+    Borrower* borrowers[3] = { new Borrower("Петров", 15, 150000, 5, 10000, '-', "Гарант Г. Г.", 1200),
+                               new Borrower("Иванов", 15, 15, 5, 100, '-', "Гант Г. Г.", 12), 
+                               new Borrower("Сидоров", 15, 1000, 5, 1000, '-', "Гар Г. Г.", 200) };
+    LegalPerson* urFace1[3] = { new LegalPerson("Банк", 10000, 5, 190000, "Иванов И. И.", 300000, 19403490, 34959484, "Пакистан"),
+                               new LegalPerson("МФО", 1000, 5, 1900, "Ива И. И.", 3000, 403490, 34959484, "Пактан"), 
+                               new LegalPerson("Должник", 100, 5, 1000, "Иван И. И.", 30, 193490, 34959484, "Пан") };
     Bank bank;
     bank.AddBorrower(borrowers[0]);
+    bank.AddBorrower(urFace1[0]);
     bank.AddBorrower(borrowers[1]);
     bank.AddBorrower(borrowers[2]);
+    bank.AddBorrower(urFace1[2]);
+    bank.OutBorromers();
+    bank.SortedBorrowersByAlpha();
     bank.OutBorromers();
 }
 
